@@ -32,11 +32,12 @@ def main():
    
     cypher_list = list(map(lambda x: b2str(bytes.fromhex(x)),cypher_list))
 
-    msg = "The secure message is ***** using a stream ciphers never use the key more than once"
+    msg = "The secret message is: When using a stream cipher, never use the key more than once"
 
+    #key = strxor(cypher_list[3],"The ciphertext produced by a weak encryption algorithm look")
     key = strxor(cypher_list[10],msg)
 
-    msg_list    = list(map(lambda x: strxor(key,x),cypher_list))
+    msg_list    = list(map(lambda x: str.encode(strxor(key,x)),cypher_list))
     
     #inc_c = 0    
     
@@ -49,7 +50,7 @@ def main():
 
     #msg_list = list(map(lambda x: ''.join(x),msg_list))
     
-
+    #print (msg_list[10])
     for i,m in enumerate(msg_list):
         print(i,":",m)
     
@@ -64,19 +65,19 @@ if __name__ == "__main__":
 
 # guessmsg=
 #0 : wELCANWAACTORRTHEBNUMBEROHZTWITHNQUACTUMTCOMPUTERSMOwESCANCALSORFACTOROTHECNUMBERRBtNW*THMAU*OGNTRA*N*CSTOHBA**MT*RHEG**ME*MNRrO*ER*PhA****
-#    We can ****** the number ** with ******* computer 
+#    We can factor the number 15 with quantum computer 
 #1 : eULERNWHULDOPROBABLYMENJOHOTHATHNOWAEISMTHEOREMEBEMOMESCANCORNERFSTONEOOFECRYPTORYStNN*NYMOU*OONTeU*E*CSTTHEO**M
-#    
+#    Euler would probably enjoy that
 #2 : tHECNICBATHINGTABOUTMkEEY*ZQWISHNOWAZEUCRYPTOGRAPHKRSECANNDRIVERAALOTROFHFANCYBCARBaCW*ANMbO*EH
 #    The 
 #3 : tHECCIPOERTEXTTPRODUCEDRBHOAWWEAKQENNRYPTIONPALGORGTHMSLOOKSLASRGOODOASTCIPHERTEXTSERO*UCEDU*YGATST*O*GSENCRY**IO*RLLG**ITDMCDrp*IL*Phz****R*A*N
-#    The ciphertext produced    
+#    The ciphertext produced by a weak encryption algorithm look   
 #4 : yOUCDONATCWANTTTOBBUYBARSTATOFTCARUKHYSMFROMPATGUYCWHOSSPECIALIZESCINRSTEALINGBCARBaCW*ARCAr*TENBER*N*HMMENTI**MO*RnLI**ER
 #    You don't want to buy a 
 #5 : tHERENAUECTWORTYPESUOFECRHETOGRAPHYACTTHATOWHICHRWGLLEKEEPCSECRETSCSAFETFROMUYOURRLITT*EHSIS*ERBTAN*N*OATOWHI**MW*LAEK**PE*ENRET*ES*FEA****R*O*RD***E*****TFBR**U********I**
 #    There are 
 #6 : tHERENAUECTWORTYPESUOFECYAAOGRAPHYOABNEMTHATPALLOWSOTHECgOVERNMENTCTORUSEEBRUTEEFOCVEW*OHBRE*KGTHEA*O*BATANDA**ET*HLTG**QUERHSrT*ER*OVE****N*A*OD***E*****TFBR**U********I****************
-#    There are 
+#    There are two types of cryptography
 #7 : wELCANWTEETTHETPOINTMWHERTOTHETCHIPADSUUNHAPPYTIFSOOWRONGNBITSISFSENTRANDECONSUMESSXOR*TPOWE*OFROMA*H*DENVIRO**EN*RHEa**MsDAMIR
 #    We can trt the point where the chip
 #8 : aEDPRIVFTEYKEYFHEENCRYPTI*NTSCHEMEUSYATESCVMALGORIZHMSOCNAMELYOAFPROCEDURECFORBGENTGAT*NGMKE*SKNARP*O*BDUREBF**ME*C*YP**NGDMLNDO*EP*OCE****R*O*ND***Y*****Z*
@@ -84,4 +85,4 @@ if __name__ == "__main__":
 #9 : wtHEAcOICISERoXFORDdICTIO*TRYIMZQACHNDE***NESUCRYPZOwASCTHEAARTROFCTWRITINGNOMRESOLCIN*TCODE*AG
 #    
 #10 : tHECSECUETTMESSAGENISXEwHTNTUSINGQAASTREAMOCIPHERICNEVERAUSELTHEFKEYOMOREETHANBONCT
-#     The secure message is ***** using a stream ciphers never use the key more than once
+#     The secure message is: when using a stream ciphers never use the key more than once
